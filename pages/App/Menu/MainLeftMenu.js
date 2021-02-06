@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import { Menu, Icon ,Layout} from 'antd';
-import { BrowserRouter,Route,Link } from 'react-router-dom';
+import { BrowserRouter,Route } from 'react-router-dom';
+import Link from 'next/link';
 import './MainLeftMenu.css';
 
 const { SubMenu } = Menu;

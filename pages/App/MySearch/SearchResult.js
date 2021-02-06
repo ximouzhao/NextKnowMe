@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card, Col, Row } from 'antd';
-import { Link } from 'react-router-dom';
+import Link from 'next/link'
 import MessageContent from '../MessageBoard/MessageContent';
 import ThinkContent from '../Think/ThinkContent';
 class SearchResult extends Component {

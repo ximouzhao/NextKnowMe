@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 //import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 //import { coy } from "react-syntax-highlighter/dist/styles/prism";
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/styles/hljs';
+import { docco } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
 
 class CodeBlock extends PureComponent {

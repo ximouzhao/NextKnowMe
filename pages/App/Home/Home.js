@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Home.css';
 import { Timeline, Icon,Card,List ,Descriptions,Typography } from 'antd';
-import world_pic from '../../resource/world.jpg';
 
 const { Text,Title,Paragraph } = Typography;
 const data = [

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link'
 import { Skeleton, Switch, Card, Icon, Avatar } from 'antd';
 import ReactMarkdown from 'react-markdown';
 import CodeBlock from '../../Tools/CodeBlock';
@@ -9,7 +9,7 @@ const { Meta } = Card;
 
 class ArticleContent extends Component{
     render(){
-      console.log(this.props);
+      console.log("this.props",this.props);
         return (
             <div>
             <Card
@@ -26,7 +26,7 @@ class ArticleContent extends Component{
                         source={this.props.element.content.substring(0, 200)} 
                         escapeHtml={false} 
                         renderers={{ code: CodeBlock,image:ImageBlock }}/>
-                        <Link to={this.props.location+`/details/${this.props.element.id}`}>阅读全文</Link>
+                        <Link href={this.props.location+`/details/${this.props.element.id}`}>阅读全文</Link>
                     </p>
                 </div>
               </Skeleton>

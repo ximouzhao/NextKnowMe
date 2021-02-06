@@ -1,9 +1,8 @@
 import React,{Component} from 'react';
 import ReactMarkdown from 'react-markdown';
-import CodeBlock from '../CodeBlock';
+import CodeBlock from '../../Tools/CodeBlock';
 import { Icon } from 'antd';
-import './ArticleContent.css';
-import headPtoto from './../resource/head_photo.png';
+import headPtoto from '../../resource/head_photo.png';
 
 class ArticleContent extends Component{
 

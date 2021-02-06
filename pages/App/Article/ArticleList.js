@@ -66,7 +66,7 @@ class Article extends Component {
     let ArticleContents = [];
     this.state.list.forEach((element, index, array) => {
       try {
-        ArticleContents.push(<ArticleContent element={element} key={index} loading={this.state.loading} location={this.props.location.pathname} />);
+        ArticleContents.push(<ArticleContent element={element} key={index} loading={this.state.loading} location={window.location.pathname} />);
       } catch (err) {
         message.error(err + '');
       }

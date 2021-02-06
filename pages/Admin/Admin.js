@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter,Route,Link,withRouter } from 'react-router-dom';
+import { BrowserRouter,Route,withRouter } from 'react-router-dom';
+import Link from 'next/link';
 import {Layout,Menu,Breadcrumb,Icon,BackTop} from 'antd';
 import VisitorLog from './VisitorLog/VisitorLog';
 import Home from './Home/Home';
