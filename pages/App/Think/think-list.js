@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import WrapFetch from '../../Tools/WrapFetch';
-import ThinkContent from './ThinkContent';
+import WrapFetch from '../../tools/wrap-fetch';
+import ThinkContent from './think-content';
 import DocumentType from '../../Constant/DocumentType';
-import { message } from 'antd';
 import InfiniteScroll from 'react-infinite-scroller';
+import KnowMeLayout from '../../components/layout';
 
 class ThinkList extends Component {
   state = {
@@ -63,20 +63,23 @@ class ThinkList extends Component {
     });
     return (
       <div>
-        <InfiniteScroll
-          className="list-contents"
-          initialLoad={false}
-          pageStart={0}
-          loadMore={this.getMore.bind(this)}
-          threshold={800}
-          hasMore={this.state.hasMore}
-          useWindow={true}
-          loader={<div className="loader" key={0}>Loading ...</div>}
-        >
-          {ThinkContents}
-          {/* Tip:内部元素不要加高度以及overflow:auto等属性！！！！ */}
-          {!this.state.hasMore ? <div className="end-text">-------- 你已经看完所有的随想啦 --------</div> : ""}
-        </InfiniteScroll>
+        <KnowMeLayout>
+          <InfiniteScroll
+            className="list-contents"
+            initialLoad={false}
+            pageStart={0}
+            loadMore={this.getMore.bind(this)}
+            threshold={800}
+            hasMore={this.state.hasMore}
+            useWindow={true}
+            loader={<div className="loader" key={0}>Loading ...</div>}
+          >
+            {ThinkContents}
+            {/* Tip:内部元素不要加高度以及overflow:auto等属性！！！！ */}
+            {!this.state.hasMore ? <div className="end-text">-------- 你已经看完所有的随想啦 --------</div> : ""}
+          </InfiniteScroll>
+        </KnowMeLayout>
+
       </div>
     );
 

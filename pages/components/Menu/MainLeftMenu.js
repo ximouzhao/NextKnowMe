@@ -1,8 +1,17 @@
 import React,{Component} from 'react'
-import { Menu, Icon ,Layout} from 'antd';
-import { BrowserRouter,Route } from 'react-router-dom';
+import { Menu,Layout} from 'antd';
 import Link from 'next/link';
 import './MainLeftMenu.css';
+import {
+  HomeOutlined,
+  BulbOutlined,
+  ReadOutlined,
+  GithubOutlined,
+  WeiboOutlined,
+  MessageOutlined,
+  SearchOutlined
+} from '@ant-design/icons';
+
 
 const { SubMenu } = Menu;
 class MainLeftMenu extends Component{
@@ -32,24 +41,24 @@ class MainLeftMenu extends Component{
                 onOpenChange={this.onOpenChange}
               >
               <Menu.Item key="home">
-                    <Link to="/app/home">
+                    <Link href="/app/home">
                       <span>
-                        <Icon type="home" />主页
+                        <HomeOutlined/>主页
                       </span>
                     </Link>
               </Menu.Item>
               <Menu.Item key="think">
-                <Link to="/app/think">
+                <Link href="/app/think">
                 <span>
-                      <Icon type="bulb" />
+                    <BulbOutlined />
                       <span>随想</span>
                     </span>
                 </Link>
               </Menu.Item>
               <Menu.Item key="article">
-                  <Link to="/app/article">
+                  <Link href="/app/article">
                     <span>
-                      <Icon type="read" />
+                      <ReadOutlined />
                       <span>文章</span>
                     </span>
                   </Link>
@@ -57,7 +66,7 @@ class MainLeftMenu extends Component{
               <Menu.Item key="github">
                 <a href="https://github.com/ximouzhao" target="_blank" rel="noopener noreferrer">
                     <span>
-                      <Icon type="github" />
+                      <GithubOutlined />
                       <span>Github</span>
                     </span>
                 </a>
@@ -65,20 +74,20 @@ class MainLeftMenu extends Component{
               <Menu.Item key="weibo">
                   <a href="https://www.weibo.com/ximouzhao" target="_blank" rel="noopener noreferrer">
                         <span>
-                                <Icon type="weibo" />
+                                <WeiboOutlined />
                                 <span>Weibo</span>
                         </span>
                   </a>
               </Menu.Item>
               <Menu.Item key="message">
-                  <Link to="/app/messageBoard">
-                    <span><Icon type="message" />留言</span>
+                  <Link href="/app/messageBoard">
+                    <span><MessageOutlined />留言</span>
                   </Link>
                     
               </Menu.Item>
               <Menu.Item key="search">
-                  <Link to="/app/search">
-                    <span><Icon type="search" />Search</span>
+                  <Link href="/app/search">
+                    <span><SearchOutlined />Search</span>
                   </Link>
                     
               </Menu.Item>

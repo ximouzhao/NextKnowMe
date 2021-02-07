@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Card, Col, Row } from 'antd';
 import Link from 'next/link'
 import MessageContent from '../MessageBoard/MessageContent';
-import ThinkContent from '../Think/ThinkContent';
+import ThinkContent from '../think/think-content';
 class SearchResult extends Component {
     render() {
         let name = this.props.element.name == undefined ? "" : this.props.element.name;

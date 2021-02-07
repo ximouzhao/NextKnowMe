@@ -1,23 +1,19 @@
 import React, { Component } from 'react';
-import './App.css';
-import { BackTop,Layout,Icon,Row, Col} from 'antd';
+import './layout.css';
+import { BackTop,Layout,Icon} from 'antd';
 import MainLeftMenu from './Menu/MainLeftMenu';
-import MessageBoard from './MessageBoard/MessageBoard';
-//import Header from './Header/Header';
-import { BrowserRouter,Route,withRouter } from 'react-router-dom';
-import Home from './Home/Home';
-import MySearch from './MySearch/MySearch';
-import ArticleList from './Article/ArticleList';
-import ArticleDetails from './Article/details/ArticleDetails';
-import ThinkList from './Think/ThinkList';
 import logopng from '../resource/logo.486a892c.png';
 import { PhotoProvider } from 'react-photo-view';
+import {
+    MenuFoldOutlined,
+    MenuUnfoldOutlined
+  } from '@ant-design/icons';
 import 'react-photo-view/dist/index.css';
 
 const {Header,Content,Footer,Sider} =Layout;
 const minMarginLeft=0;
 const maxMarginLeft=200;
-class App extends Component {
+class KnowMeLayout extends Component {
 
   state={
     collapsed:false,
@@ -60,16 +56,14 @@ class App extends Component {
         });
       }
   };
-  render() {
+  render(children,title = '赵席谋的个人博客',) {
     return (
       <Layout style={{minHeight:'100vh'}}>
         <BackTop stype={{color:'#ff4d4f'}}/>
         <Header style={{background:'#ff4d4f',padding:0,position: 'fixed', width: '100%' ,boxShadow:'0 2px 8px rgba(255, 77, 79,0.45)',zIndex: 7}}>
-          <Icon
-                className="appTrigger"
-                type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-                onClick={this.toggle}
-                />
+            {
+                this.state.collapsed ?<MenuFoldOutlined className="appTrigger" onClick={this.toggle}/>:<MenuUnfoldOutlined className="appTrigger" onClick={this.toggle}/>
+            }
           <div className="logoDiv">
                 <img className="logoPic" src={logopng}/>
           </div>
@@ -84,13 +78,7 @@ class App extends Component {
               <div className={this.state.appContentMaskClassName} onClick={this.toggle}></div>
               <PhotoProvider>
               <Content className="layoutContent" >
-                <Route exact path={`${this.props.match.path}`} component={Home}/>
-                <Route exact path={`${this.props.match.path}/home`} component={Home}/>
-                <Route exact path={`${this.props.match.path}/article`} component={ArticleList}/>
-                <Route path={`${this.props.match.path}/article/details`} component={ArticleDetails}/>
-                <Route exact path={`${this.props.match.path}/think`} component={ThinkList}/>
-                <Route exact path={`${this.props.match.path}/messageBoard`} component={MessageBoard}/>
-                <Route exact path={`${this.props.match.path}/search`} component={MySearch}/>
+                {children}
               </Content>
               </PhotoProvider>
               <Footer style={{textAlign:'center'}}>Ximou Zhao ©2019 Created by Ximou Zhao 京ICP备19037635号-1</Footer>
@@ -100,4 +88,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(App);
+export default KnowMeLayout;

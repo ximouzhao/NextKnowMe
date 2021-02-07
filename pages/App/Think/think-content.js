@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Skeleton, Switch, Card, Icon, Avatar } from 'antd';
-import IconKnowMe from '../../Icon/IconKnowMe';
+import IconKnowMe from '../../icon/icon-know-me';
 import ReactMarkdown from 'react-markdown';
-import CodeBlock from '../../Tools/CodeBlock';
-import ImageBlock from '../../Tools/ImageBlock';
+import CodeBlock from '../../tools/code-block';
+import ImageBlock from '../../tools/image-block';
 const { Meta } = Card;
 
 

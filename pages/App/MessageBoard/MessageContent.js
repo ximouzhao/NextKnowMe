@@ -1,11 +1,11 @@
 import React,{Component} from 'react';
 import ReactMarkdown from 'react-markdown';
-import CodeBlock from '../../Tools/CodeBlock';
-import ImageBlock from '../../Tools/ImageBlock';
+import CodeBlock from '../../tools/code-block';
+import ImageBlock from '../../tools/image-block';
 import { Icon } from 'antd';
 import './MessageContent.css';
 import headPtoto from '../../resource/head_photo.png';
-import IconKnowMe from '../../Icon/IconKnowMe';
+import IconKnowMe from '../../icon/icon-know-me';
 
 class MessageContent extends Component{
 
