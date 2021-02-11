@@ -56,7 +56,7 @@ class KnowMeLayout extends Component {
         });
       }
   };
-  render(children,title = '赵席谋的个人博客',) {
+  render() {
     return (
       <Layout style={{minHeight:'100vh'}}>
         <BackTop stype={{color:'#ff4d4f'}}/>
@@ -78,7 +78,7 @@ class KnowMeLayout extends Component {
               <div className={this.state.appContentMaskClassName} onClick={this.toggle}></div>
               <PhotoProvider>
               <Content className="layoutContent" >
-                {children}
+                {this.props.children}
               </Content>
               </PhotoProvider>
               <Footer style={{textAlign:'center'}}>Ximou Zhao ©2019 Created by Ximou Zhao 京ICP备19037635号-1</Footer>

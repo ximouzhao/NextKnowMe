@@ -5,7 +5,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const devProxy = {
     '/api': {
-        target: 'http://192.168.131.26:8080', // 端口自己配置合适的
+        target: 'http://home.ximouzhao.com:1998', // 端口自己配置合适的
         // pathRewrite: {
         //     '^/api': '/'
         // },

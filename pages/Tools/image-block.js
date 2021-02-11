@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import { PhotoConsumer } from 'react-photo-view';
+import Image from 'next/image'
 
 /**
  * props 对象内容
@@ -13,7 +14,7 @@ class ImageBlock extends PureComponent {
         console.log(this.props);
         return (
             <PhotoConsumer key={this.props.src} src={this.props.src} intro={this.props.alt}>
-                <img src={this.props.src} alt={this.props.alt} />
+                <Image src={this.props.src} alt={this.props.alt} />
             </PhotoConsumer>
         );
     }

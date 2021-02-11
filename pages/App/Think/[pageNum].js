@@ -4,6 +4,7 @@ import ThinkContent from './think-content';
 import DocumentType from '../../Constant/DocumentType';
 import InfiniteScroll from 'react-infinite-scroller';
 import KnowMeLayout from '../../components/layout';
+import { withRouter } from 'next/router';
 
 class ThinkList extends Component {
   state = {
@@ -29,7 +30,7 @@ class ThinkList extends Component {
     });
   }
   componentDidMount() {
-    this.getFirstData();
+    //this.getFirstData();
   }
   getFirstData = () => {
     this.setState({ loading: { tip: '正在加载...', spinning: true } });
@@ -57,6 +58,13 @@ class ThinkList extends Component {
     );
   };
   render() {
+    console.log(this.props.router.pathname)
+    console.log(this.props.router.query.pageNum)
+    debugger
+    let data = this.props.data;
+    if(this.state.list == null){
+      this.setState({ list: data.content, total: data.totalElements, hasMore: data.totalPages > 1, loading: false });
+    }
     let ThinkContents = [];
     this.state.list.forEach((element, index, array) => {
       ThinkContents.push(<ThinkContent element={element} key={index} loading={this.state.loading} />);
@@ -86,4 +94,72 @@ class ThinkList extends Component {
   }
 
 }
-export default ThinkList;
+export default withRouter(ThinkList);
+
+export async function getStaticProps() {
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
+  //const res = await fetch('https://.../posts')
+  //const posts = await res.json()
+
+  // By returning { props: posts }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      data:{
+        "code": 0,
+        "msg": "success",
+        "data": {
+          "content": [
+            {
+              "id": 2886,
+              "name": null,
+              "content": "[React全家桶_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili](https://www.bilibili.com/video/BV1Ba4y1H769/?spm_id_from=autoNext) (https://www.bilibili.com/video/BV1Ba4y1H769/?spm_id_from=autoNext)",
+              "tags": null,
+              "type": "THINK",
+              "isDelete": null,
+              "deletedAt": null,
+              "createTime": "2021-02-10 02:23:50",
+              "ts": "2021-02-10 02:23:50"
+            }
+          ],
+          "pageable": {
+            "sort": {
+              "sorted": true,
+              "unsorted": false,
+              "empty": false
+            },
+            "pageSize": 20,
+            "pageNumber": 0,
+            "offset": 0,
+            "unpaged": false,
+            "paged": true
+          },
+          "totalPages": 111,
+          "last": false,
+          "totalElements": 2213,
+          "first": true,
+          "sort": {
+            "sorted": true,
+            "unsorted": false,
+            "empty": false
+          },
+          "numberOfElements": 20,
+          "size": 20,
+          "number": 0,
+          "empty": false
+        }
+      },
+    },
+  }
+}
+
+
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: { pageNum:'0' } } // See the "paths" section below
+    ],
+    fallback: true  // See the "fallback" section below
+  };
+}
