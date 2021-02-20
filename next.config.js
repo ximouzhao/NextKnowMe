@@ -19,9 +19,9 @@ module.exports = withCss({
       // https://blog.csdn.net/weixin_40532650/article/details/113177566
     // 解决png图片import的问题
     webpack: (config)=>{
-      config.resolve.alias["@"]=path.resolve(__dirname);
+      config.resolve.alias["@"] = path.resolve(__dirname);
       config.module.rules.push({
-          test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+      test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /.*\.png.*/],
           loader: require.resolve("url-loader"),
           options: {
             limit: 10000,

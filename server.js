@@ -31,6 +31,9 @@ app.prepare()
         }
 
         server.all('*', (req, res) => {
+            // if(req.url == '/_next/image?url=%2Fapi%2Ffiles%2Fbace05e84e4eb616e550f46cd16296a4.png&w=828&q=75'){
+            //     console.log(req)
+            // }
             handle(req, res)
         })
 

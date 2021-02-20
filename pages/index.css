@@ -1,10 +1,21 @@
-@keyframes rightAreaCollapsed
-{
-    from {margin-left: 200px;}
-    to {margin-left: 0;}
+/* antd base.less */
+
+.home{
+    text-align: center;
+    font-size: 50px;
 }
-@keyframes rightAreaUnCollapsed
-{
-    from {margin-left: 0;}
-    to {margin-left: 200px;}
+.homePic{
+    display: block;
+    height: auto;
+    max-width: 100%;  
+}
+.ant-descriptions-item-label{
+    color:rgba(240, 52, 52, 1)
+}
+.homeH3{
+    color:rgba(0, 0, 0, 0.85);
+    line-height:1.5;
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
