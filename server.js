@@ -5,7 +5,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const devProxy = {
     '/api': {
-        target: 'http://home.ximouzhao.com:1998', // 端口自己配置合适的
+        target: 'http://home.ximouzhao.com:18080', // 端口自己配置合适的
         // pathRewrite: {
         //     '^/api': '/'
         // },
@@ -23,7 +23,6 @@ const handle = app.getRequestHandler()
 app.prepare()
     .then(() => {
         const server = express()
-
         if (dev && devProxy) {
             Object.keys(devProxy).forEach(function(context) {
                 server.use(createProxyMiddleware(context, devProxy[context]))

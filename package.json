@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "nstart": "next start",
+    "export": "next export",
+    "start": "cross-env NODE_ENV=production node server.js",
+    "prd": "cross-env NODE_ENV=production pm2 start server.js"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
@@ -31,6 +34,7 @@
     "url-loader": "^4.1.1"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "@babel/core": "^7.12.13",
     "@babel/plugin-proposal-decorators": "^7.12.13",
     "babel-plugin-import": "1.13.0",
