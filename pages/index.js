@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './index.css';
 import { Timeline, Icon,Card,List ,Descriptions,Typography } from 'antd';
 import KnowMeLayout from '../components/layout';
 

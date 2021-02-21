@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './layout.css';
 import { BackTop,Layout} from 'antd';
 import MainLeftMenu from './menu/main-left-menu';
 import logopng from '../resource/logo.486a892c.png';

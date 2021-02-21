@@ -5,7 +5,6 @@ import {Spin} from 'antd';
 import WrapFetch from '../../components/tools/wrap-fetch';
 import SearchResult from '../../components/my-search/search-result';
 import KnowMeLayout from '../../components/layout';
-import './index.css';
 
 const { Search } = Input;
 class MySearch extends Component {

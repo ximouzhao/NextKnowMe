@@ -48,7 +48,7 @@ class Article extends Component {
 export default withRouter(Article);
 
 export async function getStaticProps({params }) {
-  const res = await fetch("http://home.ximouzhao.com:1998/api/document/findByPageAndType?type=ARTICLE&page="
+  const res = await fetch("http://192.168.131.26:8080/api/document/findByPageAndType?type=ARTICLE&page="
   +(params.pageNum-1)+"&pageSize=20");
   const posts = await res.json();
   return {
@@ -57,7 +57,7 @@ export async function getStaticProps({params }) {
   }
 }
 export async function getStaticPaths() {
-  const res = await fetch("http://home.ximouzhao.com:1998/api/document/findByPageAndType?type=ARTICLE&page=0&pageSize=20");
+  const res = await fetch("http://192.168.131.26:8080/api/document/findByPageAndType?type=ARTICLE&page=0&pageSize=20");
   const posts = await res.json();
   const totalPages = posts.data.totalPages;
   let paths=[];

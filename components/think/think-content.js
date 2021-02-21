@@ -5,6 +5,8 @@ import { LikeOutlined } from '@ant-design/icons';
 import IconKnowMe from '../icon/icon-know-me';
 import CodeBlock from '../tools/code-block';
 import ImageBlock from '../tools/image-block';
+import Image from 'next/image';
+import headPtoto from '../../resource/head_photo.png';
 const { Meta } = Card;
 
 
@@ -18,7 +20,7 @@ class ThinkContent extends Component{
             <Skeleton loading={this.props.loading} avatar active >
                <Meta
                 avatar={
-                  <Avatar src="/static/media/head_photo.9062f33c.png" />
+                  <Avatar icon={<Image src={headPtoto } layout='fill'/>} />
                 }
                 title={this.props.element.ts}
                 description={<ReactMarkdown className="markdown" 
