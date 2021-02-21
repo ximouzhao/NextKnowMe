@@ -1,7 +1,18 @@
 // server.js
 const express = require('express')
+const sitemap =  require("nextjs-sitemap-generator");
 const next = require('next')
 const { createProxyMiddleware } = require('http-proxy-middleware');
+
+sitemap({
+    baseUrl: "https://ximouzhao.com",
+    // If you are using Vercel platform to deploy change the route to /.next/serverless/pages 
+    pagesDirectory: __dirname + "/build/server/pages",
+    targetDirectory: "public/",
+    ignoredExtensions: ["js", "map"],
+    ignoredPaths: ["assets","admin"], // Exclude everything that isn't static page
+  });
+  
 
 const devProxy = {
     '/api': {
