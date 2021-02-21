@@ -18,7 +18,7 @@ class ThinkContent extends Component{
             <Skeleton loading={this.props.loading} avatar active >
                <Meta
                 avatar={
-                  <Avatar src="https://ximouzhao.com/static/media/head_photo.9062f33c.png" />
+                  <Avatar src="/static/media/head_photo.9062f33c.png" />
                 }
                 title={this.props.element.ts}
                 description={<ReactMarkdown className="markdown" 

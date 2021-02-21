@@ -44,7 +44,7 @@ export default withRouter(ThinkList);
 
 export async function getStaticProps({params }) {
   console.log("params---------",params)
-  const res = await fetch("https://ximouzhao.com/api/document/findByPageAndType?type=THINK&page="
+  const res = await fetch("http://192.168.131.26:8080/api/document/findByPageAndType?type=THINK&page="
   +(params.pageNum-1)+
   "&pageSize=20");
   const posts = await res.json();
@@ -54,7 +54,7 @@ export async function getStaticProps({params }) {
   }
 }
 export async function getStaticPaths() {
-  const res = await fetch("http://home.ximouzhao.com:1998/api/document/findByPageAndType?type=THINK&page=0&pageSize=20");
+  const res = await fetch("http://192.168.131.26:8080/api/document/findByPageAndType?type=THINK&page=0&pageSize=20");
   const posts = await res.json();
   const totalPages = posts.data.totalPages;
   let paths=[];
